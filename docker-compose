@@ -1,0 +1,15 @@
+version: "2.1"
+services:
+  customers-phonebook-ui:
+    image:  mohammedfahmi/customers-phonebook-ui
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      -  3000:3000
+    container_name: customers-phonebook-ui
+    volumes:
+      -  ./customers-phonebook/src:/usr/app/src
+      -  ./customers-phonebook/public:/usr/app/public
+    stdin_open: true
+    tty: true
