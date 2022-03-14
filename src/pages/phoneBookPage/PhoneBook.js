@@ -1,8 +1,8 @@
 import {PhoneBookProvider} from "../../contexts/PhoneBookContext";
 import {FilterConsoleProvider} from "../../contexts/FilterConsoleContext";
-import FilterConsole from "./components/FilterConsole";
-import AppliedFilters from "./components/AppliedFilters";
-import PhoneNumbers from "./components/PhoneNumbers";
+import FilterConsole from "./components/filterConsole/FilterConsole";
+import AppliedFilters from "./components/appliedFilters/AppliedFilters";
+import PhoneNumbers from "./components/phoneNumbers/PhoneNumbers";
 
 
 const PhoneBook = () => {

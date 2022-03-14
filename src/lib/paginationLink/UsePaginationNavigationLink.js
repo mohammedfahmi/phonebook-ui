@@ -5,6 +5,7 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import Tooltip from '@mui/material/Tooltip';
+import './UsePaginationNavigationLink.css';
 
 const UsePaginationNavigationLink = (props) => {
 
@@ -15,31 +16,41 @@ const UsePaginationNavigationLink = (props) => {
         case "FIRST":
             return (
                 <Tooltip title="load first page" placement="left-start">
-                    <SkipPreviousIcon id={props.id} sx={{cursor: "pointer"}} onClick={handleClick} disabled={props.isDisabled}/>
+                    <SkipPreviousIcon id={props.id}
+                                      className={`paginationLink ${props.isDisabled && "paginationLink-disabled"}`}
+                                      onClick={handleClick}/>
                 </Tooltip>
             );
         case "PREV":
             return (
                 <Tooltip title="load previous pag" placement="left-start">
-                    <NavigateBeforeIcon id={props.id} sx={{cursor: "pointer"}} onClick={handleClick} disabled={props.isDisabled}/>
+                    <NavigateBeforeIcon id={props.id}
+                                        className={`paginationLink ${props.isDisabled && "paginationLink-disabled"}`}
+                                        onClick={handleClick}/>
                 </Tooltip>
             );
         case "NEXT":
             return (
                 <Tooltip title="load next page" placement="left-start">
-                    <NavigateNextIcon id={props.id} sx={{cursor: "pointer"}} onClick={handleClick} disabled={props.isDisabled}/>
+                    <NavigateNextIcon id={props.id}
+                                      className={`paginationLink ${props.isDisabled && "paginationLink-disabled"}`}
+                                      onClick={handleClick}/>
                 </Tooltip>
             );
         case "LAST":
             return (
                 <Tooltip title="load last page" placement="left-start">
-                    <SkipNextIcon id={props.id} sx={{cursor: "pointer"}} onClick={handleClick} disabled={props.isDisabled}/>
+                    <SkipNextIcon id={props.id}
+                                  className={`paginationLink ${props.isDisabled && "paginationLink-disabled"}`}
+                                  onClick={handleClick}/>
                 </Tooltip>
             );
         default:
             return (
                 <Tooltip title="load first page" placement="left-start">
-                    <SkipPreviousIcon id={props.id} sx={{cursor: "pointer"}} onClick={handleClick} disabled={props.isDisabled}/>
+                    <SkipPreviousIcon id={props.id}
+                                      className={`paginationLink ${props.isDisabled && "paginationLink-disabled"}`}
+                                      onClick={handleClick}/>
                 </Tooltip>
             );
 

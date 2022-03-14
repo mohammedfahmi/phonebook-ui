@@ -1,34 +1,12 @@
 import React, {useContext, useEffect, useState} from "react";
-import {FiltersContext} from "../../../contexts/PhoneBookContext";
-import {DispatchFiltersContext} from "../../../contexts/FilterConsoleContext";
-import UseSelect from "../../../parts/UseSelectHook";
-import {Paper, Box } from "@mui/material";
-import UseButton from "../../../parts/UseButton";
+import {FiltersContext} from "../../../../contexts/PhoneBookContext";
+import {DispatchFiltersContext} from "../../../../contexts/FilterConsoleContext";
+import UseSelect from "../../../../lib/select/UseSelectHook";
+import { Box } from "@mui/material";
+import UseButton from "../../../../lib/button/UseButton";
 import AddIcon from '@mui/icons-material/Add';
-import useToggle from "../../../hooks/useToggle";
-
-const styles = {
-    containerStyles: {
-        display: "grid",
-        padding: "0.5em",
-        gridTemplateColumns: "80% 20%",
-        border: "1px solid #CCCCCC",
-        borderRadius: "1.5em",
-        margin: "1em 1em 0.5em 2.5em"
-    },
-    buttonStyles: {
-        justifySelf: "center",
-        alignSelf: "center"
-
-    },
-    selectFormStyles: {
-        display: "flex",
-        flexDirection: "row",
-        marginLeft: "1.5em"
-    }
-
-}
-
+import useToggle from "../../../../hooks/useToggle";
+import './SelectFilterForm.css';
 
 const dispatchAddFilterAction = (selectedCountry, selectedState, contextFilters) => {
 
@@ -111,10 +89,11 @@ const SelectFiltersForm = () => {
             resetSelectedState();
             setSelectedStateItems([...selectedCountryState(selectedCountry.uuid, contextFilters)]);
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [selectedCountry])
     return (
-        <Paper sx={styles.containerStyles}>
-            <Box sx={styles.selectFormStyles}>
+        <div className="selectForm-container">
+            <Box className="select-group ">
                 <UseSelect
                     id="select-country-filterConsole"
                     label="Country"
@@ -133,7 +112,7 @@ const SelectFiltersForm = () => {
                     onSelect={handleSelectStates}
                 />
             </Box>
-            <Box sx={styles.buttonStyles}>
+            <Box className="select-group-add-button">
                 <UseButton
                     id="add-filter-filterConsole"
                     label="Add"
@@ -143,7 +122,7 @@ const SelectFiltersForm = () => {
                     click={handleAddFilter}
                 />
             </Box>
-        </Paper>
+        </div>
     )
 }
 export default SelectFiltersForm

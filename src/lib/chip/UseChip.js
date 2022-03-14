@@ -7,7 +7,7 @@ const UseChip = (props) => {
         props.delete(props.itemUuid);
     };
     return (
-        <Chip sx={{margin: "0.1em"}} label={props.value} onDelete={handleDelete}/>
+        <Chip sx={{margin: "0.1em", background: "#fee2cc"}} label={props.value} onDelete={handleDelete}/>
     );
 }
 UseChip.prototype = {

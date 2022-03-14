@@ -7,9 +7,9 @@ const filtersIsEqual = (filter1, filter2) => {
    )
 }
 const addCriteria = (state, action) => {
-    const {paginationCriteria, phoneNumbersCriteria} = state;
+    const {phoneNumbersCriteria} = state;
     return {
-        paginationCriteria: paginationCriteria,
+        paginationCriteria: [],
         phoneNumbersCriteria: [
             ...phoneNumbersCriteria,
             ...action.payload.filter( filter => !phoneNumbersCriteria.some(stateFilter=> filtersIsEqual(stateFilter,filter)))
@@ -17,21 +17,14 @@ const addCriteria = (state, action) => {
     }
 }
 const removeCriteria = (state, action) => {
-    const {paginationCriteria, phoneNumbersCriteria} = state;
+    const {phoneNumbersCriteria} = state;
     return {
-        paginationCriteria: paginationCriteria,
+        paginationCriteria: [],
         phoneNumbersCriteria: phoneNumbersCriteria.filter( stateFilter => action.payload.filterUuid !== stateFilter.filterUuid)
     }
 }
 const addPaginationCriteria = (state, action) => {
     const {phoneNumbersCriteria} = state;
-    return {
-        paginationCriteria: action.payload,
-        phoneNumbersCriteria: [...phoneNumbersCriteria]
-    }
-}
-const setPaginationCriteria = (state, action) => {
-    const {paginationCriteria, phoneNumbersCriteria} = state;
     return {
         paginationCriteria: action.payload,
         phoneNumbersCriteria: [...phoneNumbersCriteria]
@@ -45,7 +38,7 @@ const FilterCriteriaReducer = (state, action) => {
             return removeCriteria(state, action);
         case "RESET_CRITERIA":
             return {
-                paginationCriteria: {...state.paginationCriteria},
+                paginationCriteria: [],
                 phoneNumbersCriteria: []
             };
         case "SET_PAGINATION_CRITERIA":

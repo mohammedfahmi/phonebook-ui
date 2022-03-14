@@ -2,26 +2,23 @@ import {Button, FormHelperText} from "@mui/material";
 import PropTypes from "prop-types";
 import * as React from "react";
 import FormControl from "@mui/material/FormControl";
+import '../../index.css'
 
 const UseButton = (props) => {
     const handleClick = () => {
         props.click();
     }
     return (
-        <FormControl fullWidth disabled={props.isDisabled} error={props.error.isError} sx={{minWidth: "10vw"}}>
+        <FormControl disabled={props.isDisabled} error={props.error.isError} >
             {
                 props.containsIcon ?
                     <Button
                         id={props.id}
+                        className="app-accent-color"
                         variant="contained"
                         startIcon={props.icon}
                         disabled={props.isDisabled}
                         onClick={handleClick}
-                        sx={
-                            props.error.isError ?
-                                {maxHeight: "70%", minHeight: "70%"} :
-                                {maxHeight: "100%", minHeight: "100%"}
-                    }
                     >
                         {props.label}
                     </Button>
@@ -29,14 +26,14 @@ const UseButton = (props) => {
                     <Button
                         id={props.id}
                         variant="contained"
+                        classes={{root: "app-accent-color"}}
                         disabled={props.isDisabled}
                         onClick={handleClick}
-                        sx={ props.error.isError ? {maxHeight: "70%", minHeight: "70%" } : {maxHeight: "100%", minHeight: "100%" }}
                     >
                         {props.label}
                     </Button>
             }
-            { props.error.isError && <FormHelperText sx={{height: "30%"}}>{props.error.message}</FormHelperText> }
+            { props.error.isError && <FormHelperText>{props.error.message}</FormHelperText> }
         </FormControl>
     )
 }

@@ -1,0 +1,53 @@
+.phoneNumberTable {
+    margin: 2% 12.5%;
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3em;
+    border: 1px solid rgb(192, 192, 192);
+    font-family: Arial, serif;
+    background-color: rgb(255, 249, 249);
+    box-shadow: 6px 7px 7px rgba(0, 0, 0, 0.25), inset 0 4px 4px rgba(0, 0, 0, 0.35);
+    overflow: hidden
+}
+.phoneNumberTable-header {
+    font-weight: bold;
+    font-size: 1em !important;
+    padding: 1.25em 0.95em 1.05em 2em !important;
+    border-radius: 0 !important;
+}
+.phoneNumberTable-footer {
+    font-size: 1em;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    color: black;
+    border-radius: 0 !important;
+}
+.phoneNumberTable-row {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: start;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    overflow: hidden;
+    padding: 0.85em 0.85em 0.85em 2em;
+}
+.phoneNumberTable-header-data {
+    width: 25%;
+    font-size: 1em;
+    text-align: start;
+}
+.phoneNumberTable-data {
+    width: 25%;
+    font-size: 0.95em;
+}
+.current-page {
+    padding: 7px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25), inset 2px 2px 2px rgba(0, 0, 0, 0.35);
+}
+.nav-link {
+    margin-right: 10px;
+    margin-left: 10px;
+}

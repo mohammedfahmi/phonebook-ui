@@ -11,8 +11,8 @@ const UseSelect = (props) => {
         props.onSelect(event.target.value);
     };
     return (
-            <FormControl fullWidth disabled={props.isDisabled} error={props.error.isError} sx={{margin: "0.5em", minWidth: "15vw"}}>
-                <InputLabel id={`${props.label}-select-label`}>{props.label}</InputLabel>
+            <FormControl disabled={props.isDisabled} error={props.error.isError}>
+                <InputLabel sx={{top: "-8px"}} id={`${props.label}-select-label`}>{props.label}</InputLabel>
                 <Select
                     labelId={`${props.id}-label`}
                     id={props.id}
