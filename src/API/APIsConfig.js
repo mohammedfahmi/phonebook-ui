@@ -8,6 +8,9 @@ switch (BASE_URL) {
     case 'http://localhost:3000':
         API_URL = 'http://localhost:8080/phone-numbers-api/api/v1/rest';
         break;
+    case 'http://localhost':
+        API_URL = 'http://localhost:8080/phone-numbers-api/api/v1/rest';
+        break;
     //todo: add different environments domains as cases and their corresponding backend-api endpoints
     default:
         API_URL = 'http://localhost:8080/phone-numbers-api/api/v1/rest';

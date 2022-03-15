@@ -7,11 +7,11 @@ WORKDIR /usr/app
 # Copying only package.json
 COPY package*.json ./
 
-# Install Dependencies
-RUN npm install
-
 # Copy rest of the code to container
 COPY . .
+
+# Install Dependencies
+RUN npm install --global serve
 
 EXPOSE 3000
 

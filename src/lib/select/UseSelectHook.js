@@ -12,7 +12,7 @@ const UseSelect = (props) => {
     };
     return (
             <FormControl disabled={props.isDisabled} error={props.error.isError}>
-                <InputLabel sx={{top: "-8px"}} id={`${props.label}-select-label`}>{props.label}</InputLabel>
+                <InputLabel id={`${props.label}-select-label`}>{props.label}</InputLabel>
                 <Select
                     labelId={`${props.id}-label`}
                     id={props.id}

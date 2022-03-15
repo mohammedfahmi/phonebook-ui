@@ -1,5 +1,5 @@
 {
-  "name": "customers-phonebook",
+  "name": "phonebook-ui",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,7 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "docker-build": "docker-compose build",
-    "docker-run": "docker-compose up --detach",
+    "docker-start": "docker-compose up --detach",
     "docker-stop": "docker-compose down",
     "docker-push": "docker-compose push"
   },

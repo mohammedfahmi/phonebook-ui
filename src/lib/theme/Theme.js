@@ -10,6 +10,7 @@ const theme = createTheme({
                     backgroundColor: "#f68b1e",
                     color: "#ffffff",
                     minWidth: "110px",
+                    marginTop: "0.5em",
                     '&:hover': {
                         backgroundColor: "#f6791e",
                         '@media (hover: none)': {
@@ -28,7 +29,8 @@ const theme = createTheme({
                     maxHeight: "5vh",
                     maxWidth: "25vw",
                     height: "3vh",
-                    width: "20vw"
+                    width: "20vw",
+                    marginTop: "0.5em"
                 },
                 select: {
                     marginRight: "2em",
