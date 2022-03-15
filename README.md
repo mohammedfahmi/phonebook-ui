@@ -36,6 +36,7 @@ Runs the `build.sh` script which:
 ### `npm run docker-start`
 
 Starts the built docker image of the application in a docker container on `http://localhost:80`. 
+YOU MUST RUN `npm run docker-build` BEFORE `docker-compose up`, or just use the default scripts.
 
 ### `npm run docker-stop`
 
