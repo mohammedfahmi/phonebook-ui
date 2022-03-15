@@ -45,3 +45,13 @@ stops the running docker container of the application.
 ### `npm run docker-push`
 
 push the build docker image to docker-hub if you have permission.
+
+## Development 
+
+the application structure is divided into:
+- `Api`: contains the Api layer that communicates with the back-end.
+- `context`: here we create our contexts, we use two react hooks `useContext` and `useReducer` to create a state store without the use of redux or any external store management library.
+- `hooks`: here we add all the reusable custom hooks.
+- `lib`: contains all the reusable ui parts in the app, like button and select components, we also add the theme provider to override material-ui default styles.
+- `pages`: contains the pages with their components.
+- `reducers`: here we create the reducers that will be used with the useReducer hook.
