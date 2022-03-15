@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "docker-build": "docker-compose build",
+    "docker-build": "bash build.sh",
     "docker-start": "docker-compose up --detach",
     "docker-stop": "docker-compose down",
     "docker-push": "docker-compose push"

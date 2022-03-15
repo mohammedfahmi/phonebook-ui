@@ -7,13 +7,13 @@ WORKDIR /usr/app
 # Copying only package.json
 COPY package*.json ./
 
-# Install Dependencies
-RUN npm install
+# Copy build directory to container
+COPY ./build ./build
 
-# Copy rest of the code to container
-COPY . .
+# Install Dependencies
+RUN npm install --global serve
 
 EXPOSE 3000
 
 # Run the React app
-CMD ["npm", "start"]
+CMD ["serve", "-s", "build"]

@@ -1,17 +1,5 @@
 version: "2.1"
 services:
-  phonebook-ui:
-    image:  mohammedfahmi/phonebook-ui
-    build:
-      context: .
-      dockerfile: dockerfile
-    ports:
-      -  80:3000
-    container_name: phonebook-ui
-    stdin_open: true
-    tty: true
-    networks:
-      - phonenumbers
   phone-numbers-api:
     image:  mohammedfahmi/phone-numbers-api-api
     privileged: true
@@ -25,6 +13,21 @@ services:
       test: ["CMD", "curl", "-s", "-f", "-i", "http://localhost:8080/phone-numbers-api/actuator/health"]
       timeout: 20s
       retries: 10
+    networks:
+      - phonenumbers
+  phonebook-ui:
+    image:  mohammedfahmi/phonebook-ui
+    build:
+      context: .
+      dockerfile: dockerfile
+    depends_on:
+      phone-numbers-api:
+        condition: service_healthy
+    ports:
+      -  80:3000
+    container_name: phonebook-ui
+    stdin_open: true
+    tty: true
     networks:
       - phonenumbers
 networks:
